@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Countdown</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <section class="wrapper">
+         <h1 class="page-title">Meus objetivos</h1>
+         <div class="content">
+            <!-- Tab links -->
+            <div class="tabs">
+               <button class="tablinks active" data-tabs="tab1">
+                  🧑‍🎓 Estudar todo o conteúdo de português do ENEM
+               </button>
+               <button class="tablinks" data-tabs="tab2">
+                  🤖 Sed ut perspiciatis unde omnis iste natus error sit
+                  voluptatem accusantium doloremque laudantium, to.
+               </button>
+               <button class="tablinks" data-tabs="tab3">
+                  🧑‍🎓 Estudar todo o conteúdo de português do ENEM
+               </button>
+               <button class="tablinks" data-tabs="tab4">
+                  📚 Prova de Matemática
+               </button>
+            </div>
+
+            <!-- Tab content -->
+            <div class="wrapper_tabcontent">
+               <div id="tab1" class="tabcontent active">
+                  <h3>🧑‍🎓 Estudar todo o conteúdo de português do ENEM</h3>
+                  <h4 class="counter-title">Tempo para completar objetivo</h4>
+                  <div class="counter counter__main" data-deadline="2023-07-25">
+                     <div class="counter__wrapper">
+                        <span class="counter__number --days"></span>
+                        <p class="counter__text">dias</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --hours"></span>
+                        <p class="counter__text">horas</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --minutes"></span>
+                        <p class="counter__text">min</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --seconds"></span>
+                        <p class="counter__text">seg</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="tab2" class="tabcontent">
+                  <h3>
+                     🤖 Sed ut perspiciatis unde omnis iste natus error sit
+                     voluptatem accusantium doloremque laudantium, to.
+                  </h3>
+                  <h4 class="counter-title">Tempo para completar objetivo</h4>
+                  <div class="counter counter__main">
+                     <div class="counter__wrapper">
+                        <span class="counter__number --days"></span>
+                        <p class="counter__text">dias</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --hours"></span>
+                        <p class="counter__text">horas</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --minutes"></span>
+                        <p class="counter__text">min</p>
+                     </div>
+                     <span class="counter__separator">:</span>
+                     <div class="counter__wrapper">
+                        <span class="counter__number --seconds"></span>
+                        <p class="counter__text">seg</p>
+                     </div>
+                  </div>
+               </div>
+
+               <div id="tab3" class="tabcontent">
+                  <h3>🧑‍🎓 Estudar todo o conteúdo de português do ENEM</h3>
+                  <p>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio tenetur eius modi maiores, quidem esse saepe voluptates nobis ipsam quo officiis? Repellendus reprehenderit voluptatibus maiores, odit facilis eos delectus saepe.
+                  </p>
+               </div>
+
+               <div id="tab4" class="tabcontent">
+                  <h3>📚 Prova de Matemática</h3>
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus, doloremque eaque maxime veniam, deserunt facilis, nemo deleniti consectetur nulla fuga tenetur quidem. Molestiae aperiam, at eveniet porro sunt nisi?
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <script src="script.js"></script>
+      <script>
+         window.addEventListener("load", function () {
+            countdown();
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+body {
+    background: #28272b;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    width: 100%;
+}
+
+.page-title::after {
+    content: "_";
+    color: #6FFF57;
+}
+
+/* Abas */
+.tabs {
+    margin: 0;
+    display: block;
+}
+
+.tablinks {
+    background: rgba(58, 55, 94, 0.50);
+    font-family: "Chakra Petch", sans-serif;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 14px;
+    transition: 0.3s ease;
+    border-bottom: 4px solid rgba(58, 55, 94, 0.50);
+    border-left: 1px solid rgba(58, 55, 94, 0.50);
+    border-right: 1px solid rgba(58, 55, 94, 0.50);
+    border-top: none;
+}
+
+.tablinks:first-of-type {
+    border-radius: 40px 40px 0px 0px;
+}
+
+.tablinks:hover {
+    color: #fff;
+}
+
+.tablinks.active {
+    background-color: #3A375E;
+    z-index: 0;
+    border-bottom: 4px solid #6FFF57;
+}
+
+.tablinks.active,
+.tablinks.active:hover {
+    opacity: 1;
+}
+
+
+/* conteúdo da aba */
+.wrapper_tabcontent {
+    background: rgba(58, 55, 94, 0.50);
+    position: relative;
+    opacity: 1;
+    padding: 40px;
+    transition: all 1s ease;
+    border-radius: 0 0 40px 40px;
+}
+
+.tabcontent {
+    display: none;
+    min-height: 300px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.tabcontent h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+}
+
+.tabcontent p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.75rem;
+    font-weight: 100;
+    transition: all 1s ease;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Contador */
+.counter-title {
+    color: #6FFF57;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.counter__wrapper {
+    text-align: center;
+}
+
+.counter__wrapper .counter__number {
+    color: #FFF;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 5px;
+    text-align: center;
+    min-width: 120px;
+    display: block;
+}
+
+.counter__wrapper .counter__text {
+    color: #6FFF57;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.counter__separator {
+    display: none;
+}
+
+/* Responsivo */
+
+@media screen and (min-width: 768px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tablinks {
+        width: 25%;
+        font-size: 1.125rem;
+    }
+
+    .tablinks:first-of-type {
+        border-radius: 40px 0px 0px 0px;
+    }
+
+    .tablinks:last-of-type {
+        border-radius: 0px 40px 0px 0px;
+    }
+
+    .wrapper_tabcontent {
+        padding: 40px 60px;
+    }
+
+    .tabcontent h3 {
+        font-size: 2rem;
+    }
+
+    .counter {
+        flex-wrap: nowrap;
+    }
+
+    .counter__wrapper .counter__number {
+        font-size: 5rem;
+    }
+
+    .counter__separator {
+        display: block;
+        font-size: 5rem;
+        font-weight: 400;
+        padding-bottom: 2.7rem;
+    }
+}

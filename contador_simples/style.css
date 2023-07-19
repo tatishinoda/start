@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+
+body{
+    background: #02010E;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    /* box-sizing: border-box; */
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page-title{
+    font-size: 28px;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+}
+
+.page-title::after{
+    content: '_';
+    color: #6FFF57;
+}
+
+/* Abas */
+.tabs{
+    display: block;
+    margin: 0;
+}
+
+.tablinks{
+    background-color: rgba(58, 55, 94, 0.50);
+    font-family: "Chakra Petch", sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 1rem;
+    border-bottom: 4px solid rgba(58, 55, 94, 0.50);
+    border-left: 1px solid rgba(58, 55, 94, 0.50);
+    border-right: 1px solid rgba(58, 55, 94, 0.50);
+    border-top: none;
+}
+
+.tablinks:first-of-type{
+    border-radius: 40px 40px 0 0;
+}
+
+.tablinks:hover{
+    color: #fff;
+}
+
+.tablinks.active{
+    background-color: #3A375E;
+    border-bottom: 4px solid #6FFF57;
+}
+
+.wrapper-tabcontent{
+    background-color: rgba(58, 55, 94, 0.50);
+    position: relative;
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+
+}
+.tabcontent{
+    display: none;
+    min-height: 300px;
+}
+
+.tabcontent.active{
+    display: block;
+}
+.tabcontent h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+}
+
+.counter-title {
+    color: #6FFF57;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.counter{
+    display: block;
+    text-align: center;
+}
+
+.counter .dias{
+    color: #6FFF57;
+    font-size: 1.125rem;
+}
+
+/* Responsivo */
+
+@media screen and (min-width: 768px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tablinks {
+        width: 25%;
+        font-size: 1.125rem;
+    }
+
+    .tablinks:first-of-type {
+        border-radius: 40px 0px 0px 0px;
+    }
+
+    .tablinks:last-of-type {
+        border-radius: 0px 40px 0px 0px;
+    }
+
+    /* ---- */
+    .wrapper_tabcontent {
+        padding: 40px 60px;
+    }
+
+    .tabcontent h3 {
+        font-size: 2rem;
+    }
+
+
+}
