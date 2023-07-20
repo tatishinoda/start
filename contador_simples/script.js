@@ -2,59 +2,60 @@ let tabLinks = document.querySelectorAll(".tablinks");
 let tabContent = document.querySelectorAll(".tabcontent");
 
 tabLinks.forEach(function (element) {
-    element.addEventListener("click", openTabs);
+   element.addEventListener("click", openTabs);
 });
 function openTabs(element) {
-    let btnTarget = element.currentTarget;
-    let tabs = btnTarget.dataset.tabs;
+   let btnTarget = element.currentTarget;
+   let tabs = btnTarget.dataset.tabs;
 
-    tabContent.forEach(function (element) {
-        element.classList.remove("active");
-    });
+   tabContent.forEach(function (element) {
+      element.classList.remove("active");
+   });
 
-    tabLinks.forEach(function (element) {
-        element.classList.remove("active");
-    });
+   tabLinks.forEach(function (element) {
+      element.classList.remove("active");
+   });
 
-    document.querySelector("#" + tabs).classList.add("active");
+   document.querySelector("#" + tabs).classList.add("active");
 
-    btnTarget.classList.add("active");
+   btnTarget.classList.add("active");
 }
 
 
 // Contador
-function tempoRestante() {
-    let diaFinal = document.querySelectorAll('[id^="obj_"]')
-    console.log(diaFinal);
+function atualizaContador(dataFinal, elementoContador) {
+   const deadline = new Date(dataFinal).getTime();
 
-    for (let i = 0; i < diaFinal.length; i++) {
-        let diaFinalId = diaFinal[i].getAttribute('id');
-        let tempoFinal = diaFinalId.split('_')[1];
-        let deadline = new Date(tempoFinal);
-        console.log(deadline);
+//faz verificação se é um valor válido
+   if (isNaN(deadline)) {
+      console.error('Formato de data inválido:' . dataFinal );
+      return;
+   }
 
-        let agora = new Date();
-        let t = Math.floor(deadline.getTime() - agora.getTime());
-        let dia = Math.floor(t / (1000 * 60 * 60 * 24));
-        let hora = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minuto = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-        let segundo = Math.floor((t % (1000 * 60)) / 1000);
+   const x = setInterval(function () {
+      const agora = new Date().getTime();
+      const tempoRestante = deadline - agora;
 
-        if (t < 0) {
-            document.getElementById("obj_" + tempoFinal).innerHTML = "Prazo finalizado"
-        } else {
-            document.getElementById("obj_" + tempoFinal).innerHTML = dia + "<div class='dias'>d</div> <span class='separador'>:</span>"  + hora + "<div class='dias'>d</div> <span class='separador'>:</span>" + minuto + "<div class='dias'>d</div> <span class='separador'>:</span>" + segundo + "<div class='dias'>d</div> <span class='separador'>:</span>";
-        }
+      if (tempoRestante <= 0) {
+         clearInterval(x);
+         elementoContador.textContent = "Prazo finalizado!";
+         return;
+      }
 
-    }
+      const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
+
+       elementoContador.textContent = dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";//`${dias}d ${horas}h ${minutos}m ${segundos}s`
+   }, 1000);
 }
 
-function StartTimeRemaining(){
-    tempoRestante();
-	setInterval(function(){
-		tempoRestante();
-	}, 1000)
-}
+// Pega todos os elementos com o atributo data-deadline
+const elementoContadors = document.querySelectorAll("[data-deadline]");
 
-
-StartTimeRemaining();
+// percorre todos os elementos encontrados e chama a função atualizaContador
+elementoContadors.forEach((element) => {
+const dataFinal = element.dataset.deadline;
+atualizaContador(dataFinal, element);
+});
